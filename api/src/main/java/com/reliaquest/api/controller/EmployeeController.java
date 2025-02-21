@@ -3,7 +3,6 @@ package com.reliaquest.api.controller;
 import com.reliaquest.api.dto.Employee;
 import com.reliaquest.api.dto.EmployeeInput;
 import com.reliaquest.api.service.IEmployeeService;
-import com.reliaquest.api.service.impl.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -19,7 +18,7 @@ public class EmployeeController implements IEmployeeController<Employee, Employe
     private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
     private final IEmployeeService employeeService;
 
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeController(IEmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
